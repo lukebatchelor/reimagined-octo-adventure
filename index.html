@@ -1,26 +1,40 @@
-<input type="text" name="text" id="text" cols="30" rows="10" value="Your text here"></input><button onClick="run()">Generate</button>
-<br>
-<script>
-  function run() {
-    const allowedColors = [
-      'rgb(23, 43, 77)', // black
-      'rgb(151, 160, 175)', // grey
-      'rgb(101, 84, 192)', // purple
-      'rgb(0, 184, 217)', // blue
-      'rgb(54, 179, 126)', // green
-      'rgb(255, 86, 48)', // red
-      'rgb(255, 153, 31)' // orange
-    ]
-    const el = document.getElementById('text');
-    const target = document.getElementById('target');
-    const text = el.value;
-    const output = Array.prototype.slice.apply(text).map((letter, idx) => {
-      if (letter === ' ') return ''
-      const color = allowedColors[idx%allowedColors.length];
-      return `<span style='color: ${color}'>${letter}</span>`;
-    }).join('')
-    target.innerHTML = output;
-  }
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible">
+  <title>Reimagined-Octo-Adventure</title>
+</head>
+
+<body>
+  <input type="text" name="text" id="text" cols="30" rows="10" value="Your text here"></input>
+  <button onClick="run()">Generate</button>
+  <br>
+  <script>
+    function run() {
+      const allowedColors = [
+        'rgb(23, 43, 77)', // black
+        'rgb(151, 160, 175)', // grey
+        'rgb(101, 84, 192)', // purple
+        'rgb(0, 184, 217)', // blue
+        'rgb(54, 179, 126)', // green
+        'rgb(255, 86, 48)', // red
+        'rgb(255, 153, 31)' // orange
+      ]
+      const el = document.getElementById('text');
+      const target = document.getElementById('target');
+      const text = el.value;
+      const output = Array.prototype.slice.apply(text).map((letter, idx) => {
+        if (letter === ' ') return ''
+        const color = allowedColors[idx % allowedColors.length];
+        return `<span style='color: ${color}'>${letter}</span>`;
+      }).join('')
+      target.innerHTML = output;
+    }
   </script>
   <br>
   <div id="target"></div>
+</body>
+
+</html>
