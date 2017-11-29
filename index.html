@@ -26,7 +26,7 @@
       const target = document.getElementById('target');
       const text = el.value;
       const output = Array.prototype.slice.apply(text).map((letter, idx) => {
-        if (letter === ' ') return ''
+        if (letter === ' ') return ' '
         const color = allowedColors[idx % allowedColors.length];
         return `<span style='color: ${color}'>${letter}</span>`;
       }).join('')
